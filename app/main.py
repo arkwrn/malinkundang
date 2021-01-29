@@ -1,19 +1,4 @@
-from fastapi import FastAPI
-from starlette.middleware.cors import CORSMiddleware
+import uvicorn
 
-from app.routes import views
-from app.core import auth
-
-app = FastAPI()
-
-# Set all CORS enabled origins
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["*"],
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
-
-app.include_router(auth.router)
-app.include_router(views.router)
+if __name__ == '__main__':
+    uvicorn.run('server.app:app', host="0.0.0.0", port=8000, reload=True)
