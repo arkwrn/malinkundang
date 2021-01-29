@@ -15,13 +15,19 @@ async def get_scan():
 		scan, "Empty list")
 
 
-@router.get("/{id}", response_description="Scan data retrieved")
-async def get_scan_data(id):
+@router.get("/details/{id}", response_description="Scan data retrieved")
+async def get_scan_data_all(id):
 	scan = await retrieve_scan(id)
 	return ResponseModel(scan, "Student data retrieved successfully with id {0}") \
 		if scan \
 		else ErrorResponseModel("An error occured.", 404, "Scan with id {0} doesn'exist.")
 
+@router.get("/{id}", response_description="Scan data retrieved")
+async def get_scan_data_all(id):
+	scan = await retrieve_scan_by_id(id)
+	return ResponseModel(scan, "Student data retrieved successfully with id {0}") \
+		if scan \
+		else ErrorResponseModel("An error occured.", 404, "Scan with id {0} doesn'exist.")
 
 @router.post("/", response_description="Scan data added into the database")
 async def add_scan_data(scan_data: ScanModel = Body(...)):

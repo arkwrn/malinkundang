@@ -49,6 +49,11 @@ def scan_results(scan) -> dict:
         "results": scan['reults'],
     }
 
+def scan_id(scan) -> dict:
+    return {
+        "id": str(scan['_id']),
+    }
+
 async def retrieve_all_scan():
     scans = []
     async for scan in scan_results.find():
@@ -64,6 +69,11 @@ async def retrieve_scan(id: str) -> dict:
     scan = await scan_results.find_one({"_id": ObjectId(id)})
     if scan:
         return scan_results(scan)
+
+async def retrieve_scan_by_id(id: str) -> dict:
+    scan = await scan_results.find_one({"_id": ObjectId(id)})
+    if scan:
+        return scan_id(scan)
 
 async def delete_scan(id: str):
     scan = await scan_results.find_one({"_id": ObjectId(id)})
