@@ -1,13 +1,17 @@
-# FastAPI + MongoDB
+# Malinkundang
 
-A simple starter for building RESTful APIs with FastAPI and MongoDB. 
+> STILL IN DEVELOPMENT
 
+Malinkundang is Backend for Sangkuriang Project, A security analyzer tools
+You find the Frontend in https://github.com/Proyek-Sangkuriang/sangkuriang
+
+# Project flow
+![Login](flow/Tech-Flowchart.jpg)
 ## Features
 
 + Python FastAPI backend.
 + MongoDB database.
 + Authentication
-+ Deployment
 
 ## How To Use
 
@@ -28,52 +32,21 @@ export PYTHONPATH=$PWD
 Next:
 
 ```console
-python app/main.py
+python3 app/main.py
 ```
 
-You also need to start your mongodb instance.
+You also need to start your mongodb instance, if you don't have it please install first or use our mongodb docker.
+
+https://github.com/Proyek-Sangkuriang/purbasari/tree/master/mongodb
 
 The starter listens on port 8000 on address [0.0.0.0](0.0.0.0). 
 
-![FastAPI-MongoDB starter](https://res.cloudinary.com/adeshina/image/upload/v1600180509/fopab9idhrjqeqds4izk.png)
-
-## Deploying to Vercel
-
-> Currently, the vercel build fails when running requests to MongoDB through the async driver. The next section shows how to deploy to Heroku.
-
-To deploy to [vercel](https://vercel.com), make sure the `vercel` CLI tool is installed and run the command in the base directory:
-
-```console
-vercel 
-```
-
-The above deploys to development, to deploy it into production, run:
-
-```console
-vercel --prod
-```
-
-Ensure you add the environment variable `MONGO_DETAILS` in vercel.
 
 ## Deploying to Heroku
 
-To deploy to Heroku, connect your repository to the Heroku application and deploy the branch master. This template has been deployed to Heroku and you can view it here: [FastAPI Mongo](https://fastapi-mongo.herokuapp.com/)
+To deploy to Heroku, connect your repository to the Heroku application and deploy the branch master.
 
-Ensure you add the environment variable `MONGO_DETAILS` in your application's settings.
-
-## Dockerising
-
-To build a docker image for this boilerplate, create a duplicate `.env` file but with name `env`. Next, build an image:
-
-```console
-docker build -t fastapi-mongo .
-```
-
-The command above builds an image that can be deployed. To run the image in a container:
-
-```console
-docker run --env-file env -d --name fastapi-mongo -p 80:80 fastapi-mongo:latest
-```
+Ensure you fill up the environment variable `DB_URL` in your `.env` file
 
 ## Contributing ?
 
@@ -83,21 +56,26 @@ Fork the repo, make changes and send a PR. We'll review it together!
 
 - [ ] Add a simple bash script file that runs the installation process.
 
-- [x] Fix the `UPDATE` part of the CRUD operation
+- [ ] Fix Authentication logic
 
-- [x] Add Authentication
-
-- [x] Add Dockerfile
-
-- [x] Vercel configuration file
+- [ ] Add Dockerfile
 
 - [x] Deploying to Heroku
 
 - [ ] Write a concise README
 
-- [x] Format code. I'm new to FastAPI so I'll be working towards best practices.
+- [x] Add NMAP module
 
+- [x] Add OWASP ZAP module
 
+- [x] Add Subdomain enumeration module
+
+# Tested in
+
+@arkwrn :
+-- OS       : MacOS Catalina
+-- Database : https://github.com/Proyek-Sangkuriang/purbasari/tree/master/mongodb
+-- Python   : 3.7.2
 ## License
 
 This project is licensed under the terms of MIT license.
