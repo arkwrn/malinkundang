@@ -12,5 +12,5 @@ async def read_root():
     return {"message": "Welcome to Sangkuriang."}
 
 
-app.include_router(UserRouter, tags=["Users"], prefix="/user")
+app.include_router(UserRouter, tags=["[TESTING PURPOSE] - Users"], prefix="/user")
 app.include_router(ScanRouter, tags=["Scans"], prefix="/scan", dependencies=[Depends(token_listener)])

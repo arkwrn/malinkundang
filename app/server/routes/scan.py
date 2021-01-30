@@ -16,16 +16,9 @@ async def get_scan():
 
 
 @router.get("/details/{id}", response_description="Scan data retrieved")
-async def get_scan_data_all(id):
-	scan = await retrieve_scan(id)
-	return ResponseModel(scan, "Student data retrieved successfully with id {0}") \
-		if scan \
-		else ErrorResponseModel("An error occured.", 404, "Scan with id {0} doesn'exist.")
-
-@router.get("/{id}", response_description="Scan data retrieved")
-async def get_scan_data_all(id):
+async def get_scan_data_by_id(id):
 	scan = await retrieve_scan_by_id(id)
-	return ResponseModel(scan, "Student data retrieved successfully with id {0}") \
+	return ResponseModel(scan, "Scan data retrieved successfully with id {0}") \
 		if scan \
 		else ErrorResponseModel("An error occured.", 404, "Scan with id {0} doesn'exist.")
 
