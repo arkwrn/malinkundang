@@ -7,6 +7,7 @@ You find the Frontend in https://github.com/Proyek-Sangkuriang/sangkuriang
 
 # Project flow
 ![Login](flow/Tech-Flowchart.jpg)
+
 ## Features
 
 + Python FastAPI backend.
@@ -21,6 +22,7 @@ Please install all folowing dependencies to run all the feature in malinkundang
 
 - NMAP - https://nmap.org/download.html
 - MongoDB - https://github.com/Proyek-Sangkuriang/purbasari/tree/master/mongodb
+
 ### Run
 
 Clone this repository and make a virtual environment in it. Install the modules listed in the `requirements.txt` file:
@@ -64,16 +66,17 @@ Fork the repo, make changes and send a PR. We'll review it together!
 
 - [x] Add NMAP module
 
-- [x] Add OWASP ZAP module
+- [ ] Add OWASP ZAP module
 
-- [x] Add Subdomain enumeration module
+- [ ] Add Subdomain enumeration module
 
-# Tested in
+# List tested environment
 
-@arkwrn :
--- OS       : MacOS Catalina
--- Database : https://github.com/Proyek-Sangkuriang/purbasari/tree/master/mongodb
--- Python   : 3.7.2
+tested by [@arkwrn](https://github.com/arkwrn) :
+- OS       : MacOS Catalina 10.15.7
+- Database : https://github.com/Proyek-Sangkuriang/purbasari/tree/master/mongodb
+- Python   : 3.7.2
+
 ## License
 
 This project is licensed under the terms of MIT license.
