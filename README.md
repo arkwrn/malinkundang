@@ -15,6 +15,14 @@ You find the Frontend in https://github.com/Proyek-Sangkuriang/sangkuriang
 
 ## How To Use
 
+### Dependencies
+
+Please install all folowing dependencies to run all the feature in malinkundang
+
+- NMAP - https://nmap.org/download.html
+- MongoDB - https://github.com/Proyek-Sangkuriang/purbasari/tree/master/mongodb
+### Run
+
 Clone this repository and make a virtual environment in it. Install the modules listed in the `requirements.txt` file:
 
 ```console
@@ -35,19 +43,9 @@ Next:
 python3 app/main.py
 ```
 
-You also need to start your mongodb instance, if you don't have it please install first or use our mongodb docker.
+The starter listens on port 8000 on address [0.0.0.0](0.0.0.0).
 
-https://github.com/Proyek-Sangkuriang/purbasari/tree/master/mongodb
-
-The starter listens on port 8000 on address [0.0.0.0](0.0.0.0). 
-
-
-## Deploying to Heroku
-
-To deploy to Heroku, connect your repository to the Heroku application and deploy the branch master.
-
-Ensure you fill up the environment variable `DB_URL` in your `.env` file
-
+Please refer to http://localhost:8000/docs to check all API route and test it.
 ## Contributing ?
 
 Fork the repo, make changes and send a PR. We'll review it together!
