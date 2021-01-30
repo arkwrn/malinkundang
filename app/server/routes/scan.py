@@ -3,6 +3,7 @@ from fastapi.encoders import jsonable_encoder
 from fastapi.responses import JSONResponse
 from app.server.database.database import *
 from app.server.models.scan import *
+from app.server.modules.nmap import *
 
 router = APIRouter()
 
@@ -44,3 +45,12 @@ async def update_scan(id: str, req: UpdateScanModel = Body(...)):
 						 "Student name updated successfully") \
 		if updated_scan \
 		else ErrorResponseModel("An error occurred", 404, "There was an error updating the student.".format(id))
+
+
+# Please put you development module test in here
+@router.get("/nmap/{target}", response_description="Port scanner")
+async def check_open_port(target):
+	scan = port_scanner(target)
+	return scan \
+		if scan \
+		else ErrorResponseModel("An error occured.", 404, "Scan with id {0} doesn'exist.")
