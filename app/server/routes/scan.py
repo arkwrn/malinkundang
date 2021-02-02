@@ -4,6 +4,8 @@ from fastapi.responses import JSONResponse
 from app.server.database.database import *
 from app.server.models.scan import *
 from app.server.modules.nmap import *
+from app.server.modules.owaspzap import *
+
 
 router = APIRouter()
 
@@ -54,3 +56,39 @@ async def check_open_port(target):
 	return scan \
 		if scan \
 		else ErrorResponseModel("An error occured.", 404, "Scan with id {0} doesn'exist.")
+
+
+#Scan for zap proxy author : @wahyuhadi
+@router.post("/zap/{target}/spider", response_description="Start spider web scanner and return id")
+async def spider_scan(target):
+	try:
+		isTarget = "https://{}".format(target)
+		scan = spider_mode(isTarget)
+		return scan \
+			if scan \
+			else ErrorResponseModel("An error occured.", 404, "Scan with id {0} doesn'exist.")
+	except:
+		ErrorResponseModel("An error occured.", 404, "Something wrong.")
+
+#author : @wahyuhadi
+@router.get("/zap/{id}/spider", response_description="Get result scan by Id")
+async def get_spider_scan(id):
+	try:
+		scan = is_scan_status(id)
+		return scan \
+			if scan \
+			else ErrorResponseModel("An error occured.", 404, "Scan with id {0} doesn'exist.")
+	except:
+		ErrorResponseModel("An error occured.", 404, "Something wrong.")
+
+#author : @wahyuhadi
+@router.get("/zap/{url}/spider/summary", response_description="Get summary scan url target")
+async def get_summary_spider(url):
+	try:
+		isTarget = "https://{}".format(url)
+		scan = is_view_summary(isTarget)
+		return scan \
+			if scan \
+			else ErrorResponseModel("An error occured.", 404, "url dosnt exist")
+	except:
+		ErrorResponseModel("An error occured.", 404, "Something wrong.")

@@ -9,3 +9,4 @@ PyJWT==1.7.1
 passlib
 bcrypt
 python3-nmap
+python-owasp-zap-v2.4
