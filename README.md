@@ -48,6 +48,12 @@ python3 app/main.py
 The starter listens on port 8000 on address [0.0.0.0](0.0.0.0).
 
 Please refer to http://localhost:8000/docs to check all API route and test it.
+
+### Avilable scanner
+#### NMAP
+http://localhost:8000/nmap/scan/{target}/
+#### OWASP ZAP
+http://localhost:8000/zap/{target}/spider
 ## Contributing ?
 
 Fork the repo, make changes and send a PR. We'll review it together!
@@ -60,13 +66,11 @@ Fork the repo, make changes and send a PR. We'll review it together!
 
 - [ ] Add Dockerfile
 
-- [x] Deploying to Heroku
+- [ ] Deploying to Heroku
 
 - [ ] Write a concise README
 
-- [x] Add NMAP module
-
-- [ ] Add OWASP ZAP module
+- [x] Add OWASP ZAP module for normal mode
 
 - [ ] Add Subdomain enumeration module
 
