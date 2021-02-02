@@ -12,7 +12,11 @@ You find the Frontend in https://github.com/Proyek-Sangkuriang/sangkuriang
 
 + Python FastAPI backend.
 + MongoDB database.
-+ Authentication
++ Authentication.
++ OWASP ZAP
+    + Spider mode
++ NMAP
+    + Top 200 open ports
 
 ## How To Use
 
@@ -20,8 +24,9 @@ You find the Frontend in https://github.com/Proyek-Sangkuriang/sangkuriang
 
 Please install all folowing dependencies to run all the feature in malinkundang
 
-- NMAP - https://nmap.org/download.html
-- MongoDB - https://github.com/Proyek-Sangkuriang/purbasari/tree/master/mongodb
+- NMAP      - https://nmap.org/download.html
+- MongoDB   - https://github.com/Proyek-Sangkuriang/purbasari/tree/master/mongo-db
+- OWASP ZAP - https://github.com/Proyek-Sangkuriang/purbasari/tree/master/owasp-zap
 
 ### Run
 
@@ -52,8 +57,10 @@ Please refer to http://localhost:8000/docs to check all API route and test it.
 ### Avilable scanner
 #### NMAP
 http://localhost:8000/nmap/scan/{target}/
+
 #### OWASP ZAP
 http://localhost:8000/zap/{target}/spider
+
 ## Contributing ?
 
 Fork the repo, make changes and send a PR. We'll review it together!
@@ -70,7 +77,7 @@ Fork the repo, make changes and send a PR. We'll review it together!
 
 - [ ] Write a concise README
 
-- [x] Add OWASP ZAP module for normal mode
+- [ ] Add OWASP ZAP module for normal mode
 
 - [ ] Add Subdomain enumeration module
 
@@ -84,3 +91,7 @@ tested by [@arkwrn](https://github.com/arkwrn) :
 ## License
 
 This project is licensed under the terms of MIT license.
+
+# Contact Us
+
+Email : hubungi.aja@gmail.com
