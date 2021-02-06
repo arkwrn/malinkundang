@@ -14,5 +14,4 @@ async def read_root():
 
 app.include_router(UserRouter, tags=["[TESTING PURPOSE] - Users"], prefix="/user")
 app.include_router(ScanRouter, tags=["Scans"], prefix="/scan", dependencies=[Depends(token_listener)])
-#app.include_router(ScanRouter, tags=["Scans"], prefix="/scan")
 
