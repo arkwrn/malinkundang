@@ -56,14 +56,20 @@ Please refer to http://localhost:8000/docs to check all API route and test it.
 
 ### Avilable scanner
 #### NMAP
-http://localhost:8000/nmap/scan/{target}/
+http://localhost:8000/scan/nmap/{target}/top-port
 
 #### OWASP ZAP
-http://localhost:8000/zap/{target}/spider
+http://localhost:8000/scan/zap/{target}/spider
 
 ## Contributing ?
 
 Fork the repo, make changes and send a PR. We'll review it together!
+
+#### Module contribute notes
+
+Please put your module in the `server/modules` directory then make sure the module only accepts 2 input, which is `target` and `supporting arguments`, the module output should be in `JSON Format` which will then be parsed by the output parser to match the report to be generated.
+
+Please put your new module in `server/routes/scan.py` with following format `/<MODULE_NAME>/{target}/<MODULE_OPTIONS>`, see existing modules route for example.
 
 ## TODOS
 
