@@ -6,7 +6,7 @@ Malinkundang is Backend for Sangkuriang Project, A security analyzer tools
 You find the Frontend in https://github.com/Proyek-Sangkuriang/sangkuriang
 
 # Project flow
-![Login](flow/Tech-Flowchart.jpg)
+![Sangkuriang](flow/Tech-Flowchart.png)
 
 ## Features
 
