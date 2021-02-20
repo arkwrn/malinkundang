@@ -12,11 +12,12 @@ You find the Frontend in https://github.com/Proyek-Sangkuriang/sangkuriang
 
 + Python FastAPI backend.
 + MongoDB database.
-+ Authentication.
 + OWASP ZAP
     + Spider mode
 + NMAP
     + Top 200 open ports
++ Chaos
+    + Enumerate subdomains
 
 ## How To Use
 
@@ -61,6 +62,9 @@ http://localhost:8000/scan/nmap/{target}/top-port
 #### OWASP ZAP
 http://localhost:8000/scan/zap/{target}/spider
 
+#### CHAOS
+http://localhost:8000/scan/subdomains/{target}
+
 ## Contributing ?
 
 Fork the repo, make changes and send a PR. We'll review it together!
@@ -75,7 +79,7 @@ Please put your new module in `server/routes/scan.py` with following format `/<M
 
 - [ ] Add a simple bash script file that runs the installation process.
 
-- [ ] Fix Authentication logic
+- [ ] Add Authentication
 
 - [ ] Add Dockerfile
 

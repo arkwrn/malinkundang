@@ -5,7 +5,7 @@ from app.server.database.database import *
 from app.server.models.scan import *
 from app.server.modules.nmap import *
 from app.server.modules.owaspzap import *
-
+from app.server.modules.chaos import *
 
 router = APIRouter()
 
@@ -61,3 +61,11 @@ async def spider_scan(target):
 			else ErrorResponseModel("An error occured.", 404, "Target not response / invalid.")
 	except:
 		ErrorResponseModel("An error occured.", 404, "Something wrong.")
+
+# NMAP Scanner author : @arkwrn
+@router.get("/subdomains/{target}/", response_description="Port scanner")
+async def check_subdomain(target):
+	scan = chaos_client(target, 'json')
+	return scan \
+		if scan \
+		else ErrorResponseModel("An error occured.", 404, "Target not response / invalid.")
