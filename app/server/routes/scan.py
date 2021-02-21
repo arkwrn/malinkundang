@@ -42,7 +42,7 @@ async def get_scan():
 # Please put you development module in here
 
 # NMAP Scanner author : @arkwrn
-@router.get("/nmap/{target}/top-port", response_description="Port scanner")
+@router.post("/nmap/{target}/top-port", response_description="Port scanner")
 async def check_open_port(target):
 	scan = port_scanner(target)
 	return scan \
@@ -63,7 +63,7 @@ async def spider_scan(target):
 		ErrorResponseModel("An error occured.", 404, "Something wrong.")
 
 # NMAP Scanner author : @arkwrn
-@router.get("/subdomains/{target}/", response_description="Port scanner")
+@router.post("/subdomains/{target}/", response_description="Subdomain enumeration")
 async def check_subdomain(target):
 	scan = chaos_client(target, 'json')
 	return scan \
