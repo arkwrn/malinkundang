@@ -46,7 +46,12 @@ First, set your `PYTHONPATH`:
 export PYTHONPATH=$PWD
 ```
 
-Next:
+Next, Put the output of this comman into `.env` file with variable name `SECRET`
+
+```console
+openssl rand -hex 32
+```
+Run the app :
 
 ```console
 python3 run.py
@@ -75,6 +80,26 @@ http://localhost:8000/scan/zap/{target}/spider
 #### CHAOS
 http://localhost:8000/scan/subdomains/{target}
 
+## Deploying to Heroku
+
+To deploy to Heroku, connect your repository to the Heroku application and deploy the branch master.
+
+Ensure you add the environment variable `MONGO_DETAILS` in your application's settings.
+
+## Dockerising
+
+To build a docker image for this boilerplate, create a duplicate `.env` file but with name `env`. Next, build an image:
+
+```console
+docker build -t sangkuriang-backend .
+```
+
+The command above builds an image that can be deployed. To run the image in a container:
+
+```console
+docker run --env-file env -d --name sangkuriang-backend -p 1337:1337 sangkuriang-backend:latest
+```
+
 ## Contributing ?
 
 Fork the repo, make changes and send a PR. We'll review it together!
@@ -91,15 +116,15 @@ Please put your new module in `server/routes/scan.py` with following format `/<M
 
 - [ ] Multiple Authentication
 
-- [ ] Add Dockerfile
+- [X] Add Dockerfile
 
-- [ ] Deploying to Heroku
+- [X] Deploying to Heroku
 
 - [ ] Write a concise README
 
 - [ ] Add OWASP ZAP module for normal mode
 
-- [ ] Add Subdomain enumeration module
+- [X] Add Subdomain enumeration module
 
 # List tested environment
 

@@ -4,7 +4,7 @@ from decouple import config
 
 from app.database.database_helper import *
 
-MONGO_DETAILS = config('DB_URL')
+MONGO_DETAILS = config('MONGO_DETAILS')
 client = motor.motor_asyncio.AsyncIOMotorClient(MONGO_DETAILS)
 database = client.Sangkuriang
 scan_results = database.get_collection('scan_results')
