@@ -12,6 +12,7 @@ You find the Frontend in https://github.com/Proyek-Sangkuriang/sangkuriang
 
 + Python FastAPI backend.
 + MongoDB database.
++ JWT Authentication
 + OWASP ZAP
     + Spider mode
 + NMAP
@@ -45,15 +46,29 @@ First, set your `PYTHONPATH`:
 export PYTHONPATH=$PWD
 ```
 
-Next:
+Next, Put the output of this comman into `.env` file with variable name `SECRET`
 
 ```console
-python3 app/main.py
+openssl rand -hex 32
+```
+Run the app :
+
+```console
+python3 run.py
 ```
 
-The starter listens on port 8000 on address [0.0.0.0](0.0.0.0).
+The starter listens on port 1337 on address [localhost:1337](0.0.0.0:1337).
 
-Please refer to http://localhost:8000/docs to check all API route and test it.
+Please refer to http://localhost:1337/docs to check all API route and test it.
+
+### Sample Database
+
+Create Database with name `Sangkuriang` in your MongoDB and import sample collection thet you can find in `database/admins.json`
+
+Default credentials for login in `/admin/login/`:
+
+  "username": "admin@sangkuriang.local"
+  "password": "#Sangkuriang-2k21!"
 
 ### Avilable scanner
 #### NMAP
@@ -64,6 +79,26 @@ http://localhost:8000/scan/zap/{target}/spider
 
 #### CHAOS
 http://localhost:8000/scan/subdomains/{target}
+
+## Deploying to Heroku
+
+To deploy to Heroku, connect your repository to the Heroku application and deploy the branch master.
+
+Ensure you add the environment variable `MONGO_DETAILS` in your application's settings.
+
+## Dockerising
+
+To build a docker image for this boilerplate, create a duplicate `.env` file but with name `env`. Next, build an image:
+
+```console
+docker build -t sangkuriang-backend .
+```
+
+The command above builds an image that can be deployed. To run the image in a container:
+
+```console
+docker run --env-file env -d --name sangkuriang-backend -p 1337:1337 sangkuriang-backend:latest
+```
 
 ## Contributing ?
 
@@ -79,17 +114,17 @@ Please put your new module in `server/routes/scan.py` with following format `/<M
 
 - [ ] Add a simple bash script file that runs the installation process.
 
-- [ ] Add Authentication
+- [ ] Multiple Authentication
 
-- [ ] Add Dockerfile
+- [X] Add Dockerfile
 
-- [ ] Deploying to Heroku
+- [X] Deploying to Heroku
 
 - [ ] Write a concise README
 
 - [ ] Add OWASP ZAP module for normal mode
 
-- [ ] Add Subdomain enumeration module
+- [X] Add Subdomain enumeration module
 
 # List tested environment
 

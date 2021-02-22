@@ -1,0 +1,8 @@
+[{
+  "_id": {
+    "$oid": "60335c28147684d03e998b6c"
+  },
+  "fullname": "Admin Sangkuriang",
+  "email": "admin@sangkuriang.local",
+  "password": "$2b$12$NtVsln74dz3hZ9tr2GjpneW1V/bhXwT0cOTmy6LNo1Pc7YJadErti"
+}]
