@@ -1,9 +1,7 @@
 # Malinkundang
 
-> STILL IN DEVELOPMENT
-
 Malinkundang is Backend for Sangkuriang Project, A security analyzer tools
-You find the Frontend in https://github.com/Proyek-Sangkuriang/sangkuriang
+You find the Frontend in https://github.com/Proyek-Sangkuriang/sangkuriang (STILL IN DEVELOPMENT)
 
 # Project flow
 ![Sangkuriang](flow/Tech-Flowchart.png)
@@ -71,6 +69,7 @@ Default credentials for login in `/admin/login/`:
   "password": "#Sangkuriang-2k21!"
 
 ### Avilable scanner
+
 #### NMAP
 http://localhost:8000/scan/nmap/{target}/top-port
 
@@ -110,7 +109,7 @@ Please put your module in the `server/modules` directory then make sure the modu
 
 Please put your new module in `server/routes/scan.py` with following format `/<MODULE_NAME>/{target}/<MODULE_OPTIONS>`, see existing modules route for example.
 
-## TODOS
+## To Do's
 
 - [ ] Add a simple bash script file that runs the installation process.
 
@@ -140,3 +139,7 @@ This project is licensed under the terms of MIT license.
 # Contact Us
 
 Email : hubungi.aja@gmail.com
+
+# Thanks to
+
+[@Youngestdev](https://github.com/Youngestdev/fastapi-mongo) : Providing FastAPI template
