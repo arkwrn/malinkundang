@@ -12,6 +12,7 @@ You find the Frontend in https://github.com/Proyek-Sangkuriang/sangkuriang
 
 + Python FastAPI backend.
 + MongoDB database.
++ JWT Authentication
 + OWASP ZAP
     + Spider mode
 + NMAP
@@ -48,12 +49,21 @@ export PYTHONPATH=$PWD
 Next:
 
 ```console
-python3 app/main.py
+python3 run.py
 ```
 
-The starter listens on port 8000 on address [0.0.0.0](0.0.0.0).
+The starter listens on port 1337 on address [localhost:1337](0.0.0.0:1337).
 
-Please refer to http://localhost:8000/docs to check all API route and test it.
+Please refer to http://localhost:1337/docs to check all API route and test it.
+
+### Sample Database
+
+Create Database with name `Sangkuriang` in your MongoDB and import sample collection thet you can find in `database/admins.json`
+
+Default credentials for login in `/admin/login/`:
+
+  "username": "admin@sangkuriang.local"
+  "password": "#Sangkuriang-2k21!"
 
 ### Avilable scanner
 #### NMAP
@@ -79,7 +89,7 @@ Please put your new module in `server/routes/scan.py` with following format `/<M
 
 - [ ] Add a simple bash script file that runs the installation process.
 
-- [ ] Add Authentication
+- [ ] Multiple Authentication
 
 - [ ] Add Dockerfile
 

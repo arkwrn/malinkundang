@@ -1,11 +1,12 @@
 from fastapi import APIRouter, Body
 from fastapi.encoders import jsonable_encoder
 from fastapi.responses import JSONResponse
-from app.server.database.database import *
-from app.server.models.scan import *
-from app.server.modules.nmap import *
-from app.server.modules.owaspzap import *
-from app.server.modules.chaos import *
+import app.database
+import app.models
+from app.models.scan import *
+from app.modules.nmap import *
+from app.modules.owaspzap import *
+from app.modules.chaos import *
 
 router = APIRouter()
 

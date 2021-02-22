@@ -2,25 +2,20 @@ import motor.motor_asyncio
 from bson import ObjectId
 from decouple import config
 
-MONGO_URL = config('DB_URL')
-client = motor.motor_asyncio.AsyncIOMotorClient(MONGO_URL)
+from app.database.database_helper import *
+
+MONGO_DETAILS = config('DB_URL')
+client = motor.motor_asyncio.AsyncIOMotorClient(MONGO_DETAILS)
 database = client.Sangkuriang
-
-# Scanner database handler
 scan_results = database.get_collection('scan_results')
+admin_collection = database.get_collection('admins')
 
-def scan_results(scan) -> dict:
-    return {
-        "id": str(scan['_id']),
-        "target": scan['url'],
-        "results": scan['reults'],
-    }
+async def add_admin(admin_data: dict) -> dict:
+    admin = await admin_collection.insert_one(admin_data)
+    new_admin = await admin_collection.find_one({"_id": admin.inserted_id})
+    return admin_helper(new_admin)
 
-def scan_id(scan) -> dict:
-    return {
-        "id": str(scan['_id']),
-    }
-
+# All of the functions below is not tested yet
 async def retrieve_all_scan():
     scans = []
     async for scan in scan_results.find():
