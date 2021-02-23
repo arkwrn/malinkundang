@@ -11,3 +11,4 @@ bcrypt
 python3-nmap
 python-owasp-zap-v2.4
 Chaos-Python-Client
+starlette
